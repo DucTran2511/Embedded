@@ -1,0 +1,4 @@
+main DSTACK_USAGE:16 DSTACK_LEVEL:16 FILE:"test2.c" LINE:39
+sprintf DSTACK_USAGE:14 DSTACK_LEVEL:30 FILE:"D:\Embedded\Code_vison_32\lib\stdio.lib" LINE:1462
+_print DSTACK_USAGE:20 DSTACK_LEVEL:50 FILE:"D:\Embedded\Code_vison_32\lib\stdio.lib" LINE:533
+strlen DSTACK_USAGE:2 DSTACK_LEVEL:52 FILE:"D:\Embedded\Code_vison_32\lib\string.lib" LINE:1706

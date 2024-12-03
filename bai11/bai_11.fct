@@ -1,0 +1,4 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"bai_11.c" LINE:89
+rtc_get_time DSTACK_USAGE:6 DSTACK_LEVEL:6 FILE:"D:\Embedded\Code_vison_32\lib\ds1307.lib" LINE:51
+bcd2bin DSTACK_USAGE:1 DSTACK_LEVEL:7 FILE:"D:\Embedded\Code_vison_32\lib\bcd.lib" LINE:10
+timer0_ovf_isr DSTACK_USAGE:3 DSTACK_LEVEL:10 FILE:"bai_11.c" LINE:20

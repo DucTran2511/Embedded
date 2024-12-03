@@ -1,0 +1,11 @@
+VERSION:3 SOURCE_TIMESTAMP:595B71B2
+NODE:I LEVEL:0 LINE:8 "D:\Embedded\Code_vison_32\inc\io.h"
+NODE:I LEVEL:0 LINE:9 "D:\Embedded\Code_vison_32\inc\stdio.h"
+NODE:I LEVEL:0 LINE:10 "D:\Embedded\Code_vison_32\inc\delay.h"
+NODE:M LEVEL:0 LINE:11 "servo_1"
+NODE:M LEVEL:0 LINE:12 "BT1"
+NODE:M LEVEL:0 LINE:13 "BT2"
+NODE:V LEVEL:0 LINE:14 "dem -> R4,R5"
+NODE:V LEVEL:0 LINE:15 "vi_tri -> R7"
+NODE:F LEVEL:0 LINE:16 "timer0_ovf_isr(void)"
+NODE:F LEVEL:0 LINE:25 "main(void)"

@@ -1,0 +1,50 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+weekdays                                                                          0x0567      14
+_base_y                                                                           0x0575       4
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+hour                                                                              R5           1
+min                                                                               R4           1
+sec                                                                               R7           1
+day                                                                               R6           1
+month                                                                             R9           1
+year                                                                              R8           1
+weekday                                                                           R11          1
+_lcd_x                                                                            R10          1
+_lcd_y                                                                            R13          1
+_lcd_maxx                                                                         R12          1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+get_weekday_name                                                                  0x000E5     23
+buzz                                                                              0x000FC     16
+display_message                                                                   0x0010C     16
+main                                                                              0x0011C    312
+put_buff_G100                                                                     0x00254     64
+_print_G100                                                                       0x00294    308
+sprintf                                                                           0x003C8     52
+rtc_init                                                                          0x003FC     25
+rtc_get_time                                                                      0x00415     25
+rtc_set_time                                                                      0x0042E     13
+rtc_get_date                                                                      0x0043B     27
+rtc_set_date                                                                      0x00456     17
+_lcd_write_nibble_G102                                                            0x00467     37
+_lcd_write_data                                                                   0x0048C     12
+lcd_gotoxy                                                                        0x00498     13
+lcd_clear                                                                         0x004A5     12
+lcd_putchar                                                                       0x004B1     21
+lcd_puts                                                                          0x004C6     17
+lcd_init                                                                          0x004D7     47
+strlen                                                                            0x00506     12
+strlenf                                                                           0x00512     13
+bcd2bin                                                                           0x0051F     13
+bin2bcd                                                                           0x0052C     10

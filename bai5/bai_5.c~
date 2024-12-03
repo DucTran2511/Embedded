@@ -1,0 +1,17 @@
+/*
+ * bai_5.c
+ *
+ * Created: 2024/10/13 3:23:38 PM
+ * Author: ADMIN
+ */
+
+#include <io.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

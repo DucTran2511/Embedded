@@ -1,0 +1,5 @@
+VERSION:3 SOURCE_TIMESTAMP:59637757
+NODE:I LEVEL:0 LINE:24 "D:\Embedded\Code_vison_32\inc\mega128a.h"
+NODE:I LEVEL:0 LINE:27 "D:\Embedded\Code_vison_32\inc\glcd.h"
+NODE:I LEVEL:0 LINE:31 "D:\Embedded\Code_vison_32\inc\font5x7.h"
+NODE:F LEVEL:0 LINE:35 "main(void)"

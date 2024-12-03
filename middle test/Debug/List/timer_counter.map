@@ -1,0 +1,24 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+seconds                                                                           0x0500       1
+minutes                                                                           0x0501       1
+hours                                                                             0x0502       1
+bell_timings                                                                      0x0503       8
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+timer1_init                                                                       0x00082     12
+activate_buzzer                                                                   0x0008E      7
+check_bell                                                                        0x00095     28
+timer1_isr                                                                        0x000B1     45
+main                                                                              0x000DE     16

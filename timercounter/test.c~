@@ -1,0 +1,91 @@
+#include <io.h>
+#include <delay.h>
+#include <i2c.h>
+#include <alcd.h>
+#include <stdio.h>
+#include <ds1307.h>
+
+int d; // Blink flag
+unsigned int dem; // Timer counter
+unsigned char hour, minute, second; // Time variables
+unsigned char day, month, year, weekday; // Date variables
+
+// Timer0 interrupt for blinking colon
+interrupt[TIM0_OVF] void timer0_ovf_isr(void) {
+    TCNT0 = 0x66; // Reload timer
+    dem++;
+    if (dem == 1000) d = 1; // Blink colon
+    if (dem == 2000) {
+        dem = 0;
+        d = 0;
+    }
+}
+
+const char *weekdays[] = {
+    "Err", // Default for invalid day
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+};
+
+const char *get_weekday_name(unsigned char weekday) {
+    if (weekday >= 1 && weekday <= 7) {
+        return weekdays[weekday]; // Return valid day
+    }
+    return weekdays[0]; // Return "Err" for invalid
+}
+
+void main(void) {
+    char time_str[16]; // Buffer for time
+    char date_str[16]; // Buffer for date
+    
+    // Configure Timer0
+    ASSR = 0 << AS0; // Disable asynchronous mode
+    TCCR0 = (1 << CS01) | (1 << CS00); // Set prescaler to 64
+    TCNT0 = 0x06; // Set initial counter
+    TIMSK = (1 << TOIE0); // Enable Timer0 overflow interrupt
+
+    // Initialize peripherals
+    i2c_init();        // Initialize I2C
+    lcd_init(16);      // Initialize 16-column LCD
+    rtc_init(3, 1, 0); // Initialize RTC in 24-hour mode
+    rtc_set_time(12, 13, 10); // Set time to 12:13:10
+    rtc_set_date(27, 11, 24, 4); // Set date to 27/11/2024 (Wednesday)
+
+    #asm("sei") // Enable global interrupts
+//    DDRC.0 = 1;
+//    PORTC.0 =1;
+
+    while (1) {
+        // Fetch time and date from RTC
+        rtc_get_time(&hour, &minute, &second);
+        rtc_get_date(&day, &month, &year, &weekday);
+
+        // Format time string
+        if (d == 1) {
+            sprintf(time_str, "%02u:%02u:%02u", hour, minute, second); // Show colon
+        } else {
+            sprintf(time_str, "%02u %02u %02u", hour, minute, second); // Hide colon
+        }
+
+        // Format date string
+        sprintf(date_str, "%02u/%02u/20%02u %s", day, month, year, get_weekday_name(weekday));
+
+        // Display time on the first line
+        lcd_clear();         // Clear the LCD
+        lcd_gotoxy(0, 0);    // First row
+        lcd_puts("Time:");   // Label
+        lcd_gotoxy(6, 0);    // Display time
+        lcd_puts(time_str);
+
+        // Display date on the second line
+        lcd_gotoxy(0, 1);    // Second row
+        lcd_puts(date_str);  // Display date
+
+        delay_ms(500); // Delay to avoid flicker
+    }
+}

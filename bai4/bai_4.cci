@@ -1,0 +1,11 @@
+VERSION:3 SOURCE_TIMESTAMP:594D7A5C
+NODE:I LEVEL:0 LINE:8 "D:\Embedded\Code_vison_32\inc\io.h"
+NODE:I LEVEL:0 LINE:9 "D:\Embedded\Code_vison_32\inc\alcd.h"
+NODE:I LEVEL:0 LINE:10 "D:\Embedded\Code_vison_32\inc\delay.h"
+NODE:I LEVEL:0 LINE:11 "D:\Embedded\Code_vison_32\inc\stdlib.h"
+NODE:M LEVEL:0 LINE:12 "BT1"
+NODE:M LEVEL:0 LINE:13 "BT2"
+NODE:M LEVEL:0 LINE:14 "led"
+NODE:V LEVEL:0 LINE:15 "dem -> R4,R5"
+NODE:V LEVEL:0 LINE:16 "buf -> RAM:????"
+NODE:F LEVEL:0 LINE:17 "main(void)"

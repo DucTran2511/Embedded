@@ -1,0 +1,5 @@
+VERSION:3 SOURCE_TIMESTAMP:594D7BEE
+NODE:I LEVEL:0 LINE:8 "D:\Embedded\Code_vison_32\inc\io.h"
+NODE:I LEVEL:0 LINE:9 "D:\Embedded\Code_vison_32\inc\delay.h"
+NODE:F LEVEL:0 LINE:11 "hienThi(void)"
+NODE:F LEVEL:0 LINE:91 "main(void)"
